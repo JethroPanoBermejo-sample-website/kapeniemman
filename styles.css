@@ -92,7 +92,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(93, 25, 41, 0.4);
+    background: rgba(93, 25, 41, 0.1);
     z-index: -1;
 }
 
