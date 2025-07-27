@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kape ni Emman | Traditionally Brewed Native Coffee & Specialty Coffee | Jaro, Iloilo City</title>
+    <meta name="description" content="Experience authentic Filipino coffee tradition at Kape ni Emman in Jaro, Iloilo City. We serve traditionally brewed native coffee and specialty coffee blends.">
+    <link rel="icon" href="img/kapeniemman-tablogo.jpg" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#dfb79c] text-[#5d1929]">
+    <!-- Header/Navigation -->
+    <header class="bg-[#dbb88e] text-[#5d1929] fixed top-0 left-0 right-0 w-full z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <!-- Desktop Layout -->
+            <div class="hidden md:grid md:grid-cols-3 md:items-center">
+                <!-- Left - Navigation Links -->
+                <nav class="flex space-x-4 lg:space-x-6 justify-start">
+                    <a href="#home" class="nav-link text-[#5d1929] hover:text-[#5c2c22] font-medium text-sm lg:text-base">Home</a>
+                    <a href="#about" class="nav-link text-[#5d1929] hover:text-[#5c2c22] font-medium text-sm lg:text-base">About</a>
+                    <a href="#menu" class="nav-link text-[#5d1929] hover:text-[#5c2c22] font-medium text-sm lg:text-base">Menu</a>
+                </nav>
+                
+                <!-- Center - Main Logo -->
+                <div class="flex justify-center">
+                    <a href="#" class="flex items-center">
+                        <img src="img/kapeniemman-logo.png" alt="Kape ni Emman Logo" class="h-14 lg:h-16 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Right - Navigation Links and Delivery Logos -->
+                <div class="flex items-center justify-end space-x-4 lg:space-x-6">
+                    <nav class="flex space-x-4 lg:space-x-6">
+                        <a href="#gallery" class="nav-link text-[#5d1929] hover:text-[#5c2c22] font-medium text-sm lg:text-base">Gallery</a>
+                        <a href="#location" class="nav-link text-[#5d1929] hover:text-[#5c2c22] font-medium text-sm lg:text-base">Location</a>
+                    </nav>
+                    <div class="flex space-x-2 lg:space-x-3 ml-4 lg:ml-6">
+                        <img src="img/kapeniemman-foodpanda-logo.png" alt="FoodPanda" class="h-10 w-10 lg:h-12 lg:w-12 rounded-full hover:scale-110">
+                        <img src="img/kapeniemman-grab-logo.png" alt="Grab" class="h-10 w-10 lg:h-12 lg:w-12 rounded-full hover:scale-110">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Layout -->
+            <div class="md:hidden flex justify-between items-center">
+                <!-- Left - Burger Menu -->
+                <div>
+                    <button id="menu-toggle" class="text-2xl focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                
+                <!-- Center - Main Logo -->
+                <div class="flex justify-center">
+                    <a href="#" class="flex items-center">
+                        <img src="img/kapeniemman-logo.png" alt="Kape ni Emman Logo" class="h-12 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Right - Delivery Logos -->
+                <div class="flex space-x-2">
+                    <img src="img/kapeniemman-foodpanda-logo.png" alt="FoodPanda" class="h-8 w-8 sm:h-10 sm:w-10 rounded-full hover:scale-110">
+                    <img src="img/kapeniemman-grab-logo.png" alt="Grab" class="h-8 w-8 sm:h-10 sm:w-10 rounded-full hover:scale-110">
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu bg-[#5c2c22] md:hidden">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="py-2 text-[#dbb88e] hover:text-[#dbb88e]">Home</a>
+                <a href="#about" class="py-2 text-[#dbb88e] hover:text-[#dbb88e]">About</a>
+                <a href="#menu" class="py-2 text-[#dbb88e] hover:text-[#dbb88e]">Menu</a>
+                <a href="#gallery" class="py-2 text-[#dbb88e] hover:text-[#dbb88e]">Gallery</a>
+                <a href="#location" class="py-2 text-[#dbb88e] hover:text-[#dbb88e]">Location</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section h-screen flex items-center justify-center text-center text-white">
+        <!-- Background Video -->
+        <video autoplay muted loop class="hero-video">
+            <source src="img/kapeniemman-backgroundvideo.mp4" type="video/mp4">
+            <source src="img/kapeniemman-backgroundvideo.webm" type="video/webm">
+            <!-- Fallback for browsers that don't support video -->
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Dark Overlay -->
+        <div class="hero-overlay"></div>
+        
+        <div class="container mx-auto px-4 max-w-full relative z-10">
+            <h1 class="title-font text-3xl sm:text-4xl md:text-6xl font-bold mb-4 max-w-5xl mx-auto">A cozy, Christian & pet-friendly open-air café serving specialty & local coffee, non-coffee drinks, and homemade snacks.</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-4 max-w-3xl mx-auto">Lopez Jaena, Jaro, Iloilo City</p>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Opens from 10:00AM to 7:00PM | Monday - Saturday</p>
+            <p class="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto italic">Colossians 3:23</p>
+            <a href="#menu" class="inline-block bg-[#dbb88e] hover:bg-[#a67366] text-[#5d1929] font-bold py-3 px-8 rounded-full">
+                Explore Our Coffee
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-[#dbb88e]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-[#5d1929]">Our Story</h2>
+                <div class="w-24 h-1 bg-[#5c2c22] mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2 mb-8 md:mb-0 about-image-container">
+                    <!-- Story image positioned at top -->
+                    <img src="img/kapeniemman-story.jpg" 
+                         alt="Kape ni Emman story background" 
+                         class="about-story-image">
+                    <!-- About image positioned below with spacing -->
+                    <img src="img/kapeniemman-about.jpg" 
+                         alt="Kape ni Emman about" 
+                         class="about-main-image">
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="title-font text-2xl font-semibold mb-4 text-[#5c2c22]">Kape ni Emman — A Story of God's Presence</h3>
+                    <p class="mb-4">
+                        Kape ni Emman is more than a café — it's a testament to God's unfailing love.
+                    </p>
+                    <p class="mb-4 italic">
+                        The name comes from "Immanuel," meaning God is with us.
+                    </p>
+                    <p class="mb-4">
+                        Every cup we serve is a quiet offering, a reminder that no matter where life takes us, His presence never leaves.
+                    </p>
+                    <p class="mb-4">
+                        Our faithful dog, Mylow Emmanuel, carries a story close to our hearts — a story of how God never abandoned us, even in the toughest times. His name, like this café, is a symbol of grace, hope, and love that flows from above.
+                    </p>
+                    <p class="mb-4">
+                        This place stands because of Him.
+                    </p>
+                    <p class="mb-6">
+                        And everything we do is rooted in Colossians 3:23:
+                    </p>
+                    <blockquote class="mb-6 p-4 bg-[rgba(93,25,41,0.1)] rounded-lg border-l-4 border-[#5c2c22]">
+                        <p class="font-bold italic text-[#5c2c22]">
+                            "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters"
+                        </p>
+                    </blockquote>
+                    <p class="mb-6 text-center font-medium text-[#5c2c22]">
+                        Come share a cup with us — and may His presence fill your day.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-[#dfb79c]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-[#5d1929]">Our Menu Categories</h2>
+                <div class="w-24 h-1 bg-[#5c2c22] mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">Discover our diverse selection of coffee, food, and specialty drinks</p>
+            </div>
+            
+            <!-- Menu Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Toasties Category -->
+                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-[#5c2c22] text-white p-4 text-center">
+                        <h3 class="title-font text-xl font-semibold">Toasties</h3>
+                    </div>
+                    <div class="p-4">
+                        <!-- Cheese Toasties -->
+                        <div class="menu-item-small mb-4 flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE20230724110334060845/detail/menueditor_item_a7777a52d6b140bfb70d8fdd703b4c1a_1721970137317864881.webp" 
+                                 alt="Cheese Toasties" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Cheese Toasties</h4>
+                                <span class="text-[#5c2c22] font-bold">₱150</span>
+                            </div>
+                        </div>
+                        <!-- Creamy Spinach -->
+                        <div class="menu-item-small flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE20230724110334031552/detail/menueditor_item_db4f1b5cbf284604bf9e29f88e2bc2e0_1727429816483125191.webp" 
+                                 alt="Creamy Spinach" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Creamy Spinach</h4>
+                                <span class="text-[#5c2c22] font-bold">₱195</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotdogs Category -->
+                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-[#5c2c22] text-white p-4 text-center">
+                        <h3 class="title-font text-xl font-semibold">Hotdogs (Cheese Stuffed)</h3>
+                    </div>
+                    <div class="p-4">
+                        <!-- Bacon Wrapped Hotdog -->
+                        <div class="menu-item-small mb-4 flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2023082900341497244/detail/menueditor_item_757702aaa935405ea7846b1cb0d58a24_1706337520048998253.webp" 
+                                 alt="Bacon Wrapped Hotdog" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Bacon Wrapped Hotdog</h4>
+                                <span class="text-[#5c2c22] font-bold">₱165</span>
+                            </div>
+                        </div>
+                        <!-- Chili Con Hotdog -->
+                        <div class="menu-item-small flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2023112902103092928/detail/menueditor_item_5804082ca7294527800fe891584f14b8_1702021880541957893.webp" 
+                                 alt="Chili Con Hotdog" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Chili Con Hotdog</h4>
+                                <span class="text-[#5c2c22] font-bold">₱185</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Homemade Waffles Category -->
+                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-[#5c2c22] text-white p-4 text-center">
+                        <h3 class="title-font text-xl font-semibold">Homemade Waffles</h3>
+                    </div>
+                    <div class="p-4">
+                        <!-- Classic Stack -->
+                        <div class="menu-item-small mb-4 flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2024022205242279090/detail/menueditor_item_b8be98ae6ae549e49844936c99215a6b_1708579356031176957.webp" 
+                                 alt="Classic Stack" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Classic Stack</h4>
+                                <span class="text-[#5c2c22] font-bold">₱170</span>
+                            </div>
+                        </div>
+                        <!-- Cinnamon Crisp -->
+                        <div class="menu-item-small flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2024082107500765886/detail/menueditor_item_9e5d95f4d95d4e63b122b8ed11fb34bb_1724226598951312040.webp" 
+                                 alt="Cinnamon Crisp" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Cinnamon Crisp</h4>
+                                <span class="text-[#5c2c22] font-bold">₱210</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Native Coffee Category -->
+                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-[#5c2c22] text-white p-4 text-center">
+                        <h3 class="title-font text-xl font-semibold">Native Coffee</h3>
+                    </div>
+                    <div class="p-4">
+                        <!-- Kape ni Emman Black -->
+                        <div class="menu-item-small mb-4 flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE20230724110337043124/detail/menueditor_item_f9b29bbe72ef424cba7e233476e61e4a_1747374387039593902.webp" 
+                                 alt="Kape ni Emman Black Coffee" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Kape ni Emman (Black)</h4>
+                                <span class="text-[#5c2c22] font-bold">₱85</span>
+                            </div>
+                        </div>
+                        <!-- Kape ni Emman with Milk -->
+                        <div class="menu-item-small flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2024111103435454976/detail/menueditor_item_dfa8e9c13cb848a8b590fb9f28a21d29_1731307761061413801.webp" 
+                                 alt="Kape ni Emman with Milk" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Kape ni Emman with Milk</h4>
+                                <span class="text-[#5c2c22] font-bold">₱110</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialty Coffee Category -->
+                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-[#5c2c22] text-white p-4 text-center">
+                        <h3 class="title-font text-xl font-semibold">Specialty Coffee</h3>
+                    </div>
+                    <div class="p-4">
+                        <!-- Kape Yesu -->
+                        <div class="menu-item-small mb-4 flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2024020505592296761/detail/menueditor_item_59e2b9976767433abb2f74c1b25306a1_1717479884235377619.webp" 
+                                 alt="Kape Yesu" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Kape Yesu</h4>
+                                <span class="text-[#5c2c22] font-bold">₱180</span>
+                            </div>
+                        </div>
+                        <!-- Café Latte -->
+                        <div class="menu-item-small flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2024050903170861548/detail/menueditor_item_d06077c8535e40c598f5aa786f0cdc8e_1716728945963448780.webp" 
+                                 alt="Café Latte" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Café Latte</h4>
+                                <span class="text-[#5c2c22] font-bold">₱195</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matcha Series Category -->
+                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-[#5c2c22] text-white p-4 text-center">
+                        <h3 class="title-font text-xl font-semibold">Matcha Series</h3>
+                    </div>
+                    <div class="p-4">
+                        <!-- Hot Matcha -->
+                        <div class="menu-item-small mb-4 flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE20230724110335084808/detail/menueditor_item_9aff45ff6913422583662aa1ffa058b5_1721974867253918930.webp" 
+                                 alt="Hot Matcha" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Hot Matcha</h4>
+                                <span class="text-[#5c2c22] font-bold">₱140</span>
+                            </div>
+                        </div>
+                        <!-- Iced Matcha -->
+                        <div class="menu-item-small flex items-center space-x-3">
+                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE20230724110335077500/detail/menueditor_item_87f1a6f52fce48a2a8acefad66722c51_1721970843830320999.webp" 
+                                 alt="Iced Matcha" 
+                                 class="w-16 h-16 object-cover rounded-lg">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-[#5d1929]">Iced Matcha</h4>
+                                <span class="text-[#5c2c22] font-bold">₱170</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="text-center">
+                <button id="view-full-menu-btn" class="inline-block border-2 border-[#5d1929] text-[#5d1929] hover:bg-[#5d1929] hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    View Full Menu
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Menu Modal -->
+    <div id="full-menu-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-md w-full mx-auto">
+                <div class="p-6 text-center">
+                    <h3 class="title-font text-2xl font-bold mb-4 text-[#5d1929]">Order Our Full Menu</h3>
+                    <p class="mb-6 text-gray-600">Choose your preferred delivery platform to browse our complete menu and place your order.</p>
+                    
+                    <div class="space-y-4">
+                        <!-- Grab Food Link -->
+                        <a href="https://food.grab.com/ph/en/restaurant/online-delivery/2-C4JBTJCEGLCBA2?sourceID=20250726_214232_2d06e19e5366439e96d6f178656807ac_MEXMPS" 
+                           target="_blank" 
+                           class="flex items-center justify-center space-x-3 bg-[#00B14F] hover:bg-[#009A42] text-white font-bold py-4 px-6 rounded-lg transition duration-300">
+                            <img src="img/kapeniemman-grab-logo.png" alt="Grab" class="h-8 w-8 rounded-full">
+                            <span>Order via Grab Food</span>
+                        </a>
+                        
+                        <!-- FoodPanda Link -->
+                        <a href="https://www.foodpanda.ph/restaurant/ugei/kape-ni-emman-jaro" 
+                           target="_blank" 
+                           class="flex items-center justify-center space-x-3 bg-[#E21B70] hover:bg-[#C91860] text-white font-bold py-4 px-6 rounded-lg transition duration-300">
+                            <img src="img/kapeniemman-foodpanda-logo.png" alt="FoodPanda" class="h-8 w-8 rounded-full">
+                            <span>Order via FoodPanda</span>
+                        </a>
+                    </div>
+                    
+                    <button id="close-modal-btn" class="mt-6 text-gray-500 hover:text-gray-700 font-medium">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-12 md:py-16 bg-[#dbb88e]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="title-font text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-[#5d1929]">Our Coffee Journey</h2>
+                <div class="w-16 md:w-24 h-1 bg-[#5c2c22] mx-auto"></div>
+                <p class="mt-3 md:mt-4 max-w-2xl mx-auto text-sm md:text-base">A glimpse into our coffee preparation and cozy atmosphere</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer" data-image="img/kapeniemman-books.jpg" data-title="Reading Corner" data-index="0">
+                    <img src="img/kapeniemman-books.jpg" 
+                         alt="Reading Corner" 
+                         class="w-full h-40 sm:h-44 md:h-48 object-cover hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer" data-image="img/kapeniemman-environment.jpg" data-title="Cafe Environment" data-index="1">
+                    <img src="img/kapeniemman-environment.jpg" 
+                         alt="Cafe Environment" 
+                         class="w-full h-40 sm:h-44 md:h-48 object-cover hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer" data-image="img/kapeniemman-events.jpg" data-title="Special Events" data-index="2">
+                    <img src="img/kapeniemman-events.jpg" 
+                         alt="Special Events" 
+                         class="w-full h-40 sm:h-44 md:h-48 object-cover hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer" data-image="img/kapeniemman-frontdesk.jpg" data-title="Front Desk Area" data-index="3">
+                    <img src="img/kapeniemman-frontdesk.jpg" 
+                         alt="Front Desk Area" 
+                         class="w-full h-40 sm:h-44 md:h-48 object-cover hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer" data-image="img/kapeniemman-otherview.jpg" data-title="Another View" data-index="4">
+                    <img src="img/kapeniemman-otherview.jpg" 
+                         alt="Another View" 
+                         class="w-full h-40 sm:h-44 md:h-48 object-cover hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer" data-image="img/kapeniemman-petfriendly.jpg" data-title="Pet-Friendly Space" data-index="5">
+                    <img src="img/kapeniemman-petfriendly.jpg" 
+                         alt="Pet-Friendly Space" 
+                         class="w-full h-40 sm:h-44 md:h-48 object-cover hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer" data-image="img/kapeniemman-story.jpg" data-title="Our Story" data-index="6">
+                    <img src="img/kapeniemman-story.jpg" 
+                         alt="Our Story" 
+                         class="w-full h-40 sm:h-44 md:h-48 object-cover hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer" data-image="img/kapeniemman-about.jpg" data-title="About Kape ni Emman" data-index="7">
+                    <img src="img/kapeniemman-about.jpg" 
+                         alt="About Kape ni Emman" 
+                         class="w-full h-40 sm:h-44 md:h-48 object-cover hover:scale-105 transition duration-500">
+                </div>
+            </div>
+            
+            <div class="mt-8 md:mt-12 text-center">
+                <a href="#location" class="inline-flex items-center text-[#5d1929] hover:text-[#5c2c22] font-bold text-sm md:text-base">
+                    Visit Us <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Image Modal -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center">
+        <div class="relative max-w-4xl max-h-full mx-4">
+            <!-- Close Button -->
+            <button id="close-gallery-modal" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 transition duration-300 z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Navigation Buttons -->
+            <button id="prev-image" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-300 transition duration-300 z-10">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="next-image" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-300 transition duration-300 z-10">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Image Container -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-2xl">
+                <img id="modal-image" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain">
+                <div class="p-4 bg-white">
+                    <h3 id="modal-image-title" class="text-xl font-semibold text-[#5d1929] mb-2"></h3>
+                    <p id="modal-image-counter" class="text-sm text-gray-600"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="py-12 md:py-16 bg-[#dfb79c]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="title-font text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-[#5d1929]">What Our Customers Say</h2>
+                <div class="w-16 md:w-24 h-1 bg-[#5c2c22] mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-6 md:p-8 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#3b5998] mr-3 md:mr-4 flex items-center justify-center">
+                                <i class="fab fa-facebook-f text-white text-sm md:text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#5d1929] text-sm md:text-base">Drawn to Jesus</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mb-4 text-xs md:text-sm">"This café has such a warm and welcoming atmosphere. The staff are incredibly kind and the owner is hands-on and genuinely caring. You can really feel the Christian spirit in the space! There's a comforting presence the moment you walk in. Highly recommended to everyone! As for the food and drinks—definitely a 10/10! You can tell they're truly living out Colossians 3:23 in everything they do. 😊 More blessings to you, Kape ni Emman! ✨"</p>
+                    <div class="text-xs text-gray-600">
+                        <span class="inline-block bg-gray-100 rounded-full px-2 py-1 mr-1 mb-1">Best coffee</span>
+                        <span class="inline-block bg-gray-100 rounded-full px-2 py-1 mr-1 mb-1">Relaxing atmosphere</span>
+                        <span class="inline-block bg-gray-100 rounded-full px-2 py-1 mr-1 mb-1">Cosy atmosphere</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-6 md:p-8 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#3b5998] mr-3 md:mr-4 flex items-center justify-center">
+                                <i class="fab fa-facebook-f text-white text-sm md:text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#5d1929] text-sm md:text-base">helloiloilo</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mb-4 text-xs md:text-sm">"Best coffee in both Local and Specialty coffee. Quality is a 10/10. All made with love! Highly and super recommended! Hidden GEM near CPU! 😍💎"</p>
+                    <div class="text-xs text-gray-600">
+                        <span class="inline-block bg-gray-100 rounded-full px-2 py-1 mr-1 mb-1">Best coffee</span>
+                        <span class="inline-block bg-gray-100 rounded-full px-2 py-1 mr-1 mb-1">Single origin coffees</span>
+                        <span class="inline-block bg-gray-100 rounded-full px-2 py-1 mr-1 mb-1">Delicious sandwiches</span>
+                        <span class="inline-block bg-gray-100 rounded-full px-2 py-1 mr-1 mb-1">Fresh smoothies</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-6 md:p-8 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#3b5998] mr-3 md:mr-4 flex items-center justify-center">
+                                <i class="fab fa-facebook-f text-white text-sm md:text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#5d1929] text-sm md:text-base">Dolores Adolacion</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mb-4 text-xs md:text-sm">"Quality coffee and good customer service. 💯"</p>
+                    <div class="text-xs text-gray-600">
+                        <span class="inline-block bg-gray-100 rounded-full px-2 py-1 mr-1 mb-1">Popular with locals</span>
+                        <span class="inline-block bg-gray-100 rounded-full px-2 py-1 mr-1 mb-1">Cosy atmosphere</span>
+                        <span class="inline-block bg-gray-100 rounded-full px-2 py-1 mr-1 mb-1">Strong cold brew</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-12 md:py-16 bg-[#dbb88e]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="title-font text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-[#5d1929]">Find Us Here</h2>
+                <div class="w-16 md:w-24 h-1 bg-[#5c2c22] mx-auto"></div>
+                <p class="mt-3 md:mt-4 text-sm md:text-base">Come visit us at our cozy café location!</p>
+            </div>
+            
+            <!-- Location Image -->
+            <div class="mb-8 md:mb-12 max-w-4xl mx-auto">
+                <div class="bg-white p-3 md:p-4 rounded-lg shadow-md relative group cursor-pointer">
+                    <img src="img/kapeniemman-location.png" 
+                         alt="Kape ni Emman Location" 
+                         class="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg">
+                    
+                    <!-- Overlay with Get Directions Button (appears on hover) -->
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                        <a href="https://www.google.com/maps/place/kape+ni+emman/@10.7312094,122.5522986,17z/data=!3m1!4b1!4m6!3m5!1s0x33aee5142901641d:0xf55dde12c759e447!8m2!3d10.7312094!4d122.5522986!16s%2Fg%2F11tsklq6r_?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" 
+                           target="_blank" 
+                           class="bg-[#5d1929] hover:bg-[#5c2c22] text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-lg transition duration-300 transform scale-105 md:scale-110 text-sm md:text-base">
+                            <i class="fas fa-directions mr-2"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Location Details -->
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Desktop/Tablet Layout (700px and above) - Two Columns -->
+                <div class="hidden min-[700px]:grid min-[700px]:grid-cols-2 min-[700px]:gap-8 min-[700px]:items-start">
+                    <!-- Left Column -->
+                    <div>
+                        <!-- Address -->
+                        <div class="mb-6">
+                            <h3 class="title-font text-xl font-semibold mb-2 text-[#5c2c22]">Address</h3>
+                            <p class="text-[#5d1929] text-base">20 Sto. Domingo St, Jaro, Iloilo City, Iloilo</p>
+                        </div>
+                        
+                        <!-- Business Hours -->
+                        <div class="mb-6">
+                            <h3 class="title-font text-xl font-semibold mb-2 text-[#5c2c22]">Business Hours</h3>
+                            <p class="text-[#5d1929] text-base">10:00 AM - 7:00 PM<br>Monday to Saturday</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div>
+                        <!-- Contact -->
+                        <div class="mb-8">
+                            <h3 class="title-font text-xl font-semibold mb-4 text-[#5c2c22]">Contact</h3>
+                            
+                            <!-- All Icons in One Line -->
+                            <div class="flex justify-center space-x-4">
+                                <a href="https://web.facebook.com/kapeniemman" target="_blank" class="bg-[#3b5998] text-white p-3 rounded-full hover:bg-[#344e86] transition duration-300">
+                                    <i class="fab fa-facebook-f text-lg"></i>
+                                </a>
+                                <a href="https://www.instagram.com/kapeniemman" target="_blank" class="bg-[#e4405f] text-white p-3 rounded-full hover:bg-[#d03150] transition duration-300">
+                                    <i class="fab fa-instagram text-lg"></i>
+                                </a>
+                                <a href="https://food.grab.com/ph/en/restaurant/online-delivery/2-C4JBTJCEGLCBA2?sourceID=20250726_214232_2d06e19e5366439e96d6f178656807ac_MEXMPS" target="_blank" class="bg-[#00B14F] text-white p-3 rounded-full hover:bg-[#009A42] transition duration-300">
+                                    <img src="img/kapeniemman-grab-logo.png" alt="Grab" class="h-6 w-6 rounded-full">
+                                </a>
+                                <a href="https://www.foodpanda.ph/restaurant/ugei/kape-ni-emman-jaro" target="_blank" class="bg-[#E21B70] text-white p-3 rounded-full hover:bg-[#C91860] transition duration-300">
+                                    <img src="img/kapeniemman-foodpanda-logo.png" alt="FoodPanda" class="h-6 w-6 rounded-full">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Layout (below 700px) - Single Column -->
+                <div class="min-[700px]:hidden">
+                    <!-- Address -->
+                    <div class="mb-6">
+                        <h3 class="title-font text-xl font-semibold mb-2 text-[#5c2c22]">Address</h3>
+                        <p class="text-[#5d1929] text-base">20 Sto. Domingo St, Jaro, Iloilo City, Iloilo</p>
+                    </div>
+                    
+                    <!-- Business Hours -->
+                    <div class="mb-6">
+                        <h3 class="title-font text-xl font-semibold mb-2 text-[#5c2c22]">Business Hours</h3>
+                        <p class="text-[#5d1929] text-base">10:00 AM - 7:00 PM<br>Monday to Saturday</p>
+                    </div>
+                    
+                    <!-- Contact -->
+                    <div class="mb-8">
+                        <h3 class="title-font text-xl font-semibold mb-4 text-[#5c2c22]">Contact</h3>
+                        
+                        <!-- All Icons in One Line -->
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://web.facebook.com/kapeniemman" target="_blank" class="bg-[#3b5998] text-white p-3 rounded-full hover:bg-[#344e86] transition duration-300">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="https://www.instagram.com/kapeniemman" target="_blank" class="bg-[#e4405f] text-white p-3 rounded-full hover:bg-[#d03150] transition duration-300">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </a>
+                            <a href="https://food.grab.com/ph/en/restaurant/online-delivery/2-C4JBTJCEGLCBA2?sourceID=20250726_214232_2d06e19e5366439e96d6f178656807ac_MEXMPS" target="_blank" class="bg-[#00B14F] text-white p-3 rounded-full hover:bg-[#009A42] transition duration-300">
+                                <img src="img/kapeniemman-grab-logo.png" alt="Grab" class="h-6 w-6 rounded-full">
+                            </a>
+                            <a href="https://www.foodpanda.ph/restaurant/ugei/kape-ni-emman-jaro" target="_blank" class="bg-[#E21B70] text-white p-3 rounded-full hover:bg-[#C91860] transition duration-300">
+                                <img src="img/kapeniemman-foodpanda-logo.png" alt="FoodPanda" class="h-6 w-6 rounded-full">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#5d1929] text-[#dfb79c] py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-1">
+                    <a href="#" class="flex items-center mb-4">
+                        <img src="img/kapeniemman-doglogo.png" alt="Kape ni Emman Dog Logo" class="h-20 lg:h-24 w-auto mr-3">
+                        <span class="title-font text-2xl font-bold">Kape ni Emman</span>
+                    </a>
+                    <p class="mb-4">Traditionally Brewed Native Coffee & Specialty Coffee in the heart of Jaro, Iloilo City.</p>
+                    <p class="mb-4 text-sm italic">"Whatever you do, work at it with all your heart, as working for the Lord"</p>
+                    <p class="text-sm">© 2025 Kape ni Emman. All rights reserved.</p>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-[#dbb88e] transition duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-[#dbb88e] transition duration-300">About</a></li>
+                        <li><a href="#menu" class="hover:text-[#dbb88e] transition duration-300">Menu</a></li>
+                        <li><a href="#gallery" class="hover:text-[#dbb88e] transition duration-300">Gallery</a></li>
+                        <li><a href="#location" class="hover:text-[#dbb88e] transition duration-300">Location</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-semibold mb-4">Visit & Order</h3>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-[#dbb88e] mr-2 mt-1"></i>
+                            <span class="text-sm">20 Sto. Domingo St, Jaro, Iloilo City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-[#dbb88e] mr-2"></i>
+                            <span class="text-sm">10AM - 7PM | Mon - Sat</span>
+                        </li>
+                    </ul>
+                    
+                    <!-- Social Media & Delivery -->
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-sm font-semibold mb-2">Follow Us</p>
+                            <div class="flex space-x-3">
+                                <a href="https://web.facebook.com/kapeniemman" target="_blank" class="text-xl hover:text-[#dbb88e] transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/kapeniemman" target="_blank" class="text-xl hover:text-[#dbb88e] transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm font-semibold mb-2">Order Online</p>
+                            <div class="flex space-x-3">
+                                <a href="https://food.grab.com/ph/en/restaurant/online-delivery/2-C4JBTJCEGLCBA2?sourceID=20250726_214232_2d06e19e5366439e96d6f178656807ac_MEXMPS" target="_blank" class="hover:scale-110 transition duration-300">
+                                    <img src="img/kapeniemman-grab-logo.png" alt="Grab" class="h-8 w-8 rounded-full">
+                                </a>
+                                <a href="https://www.foodpanda.ph/restaurant/ugei/kape-ni-emman-jaro" target="_blank" class="hover:scale-110 transition duration-300">
+                                    <img src="img/kapeniemman-foodpanda-logo.png" alt="FoodPanda" class="h-8 w-8 rounded-full">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-[#5c2c22] mt-8 pt-8 text-center">
+                <p class="text-sm">Visit us in Jaro, Iloilo City and experience authentic Filipino coffee tradition with God's love.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[#5d1929] text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
