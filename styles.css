@@ -92,7 +92,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(93, 25, 41, 0.0);
+    background: rgba(93, 25, 41, 0.2);
     z-index: -1;
 }
 
@@ -555,4 +555,208 @@ img {
     .about-main-image {
         top: 8rem; /* Adjust for tablets */
     }
+}
+
+/* Menu Carousel Styles */
+.menu-carousel {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu-slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    width: 100%;
+}
+
+.menu-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Theme Background Colors */
+#menu[data-current-theme="yesua"] {
+    background: linear-gradient(135deg, #4a2c2a 0%, #6b3e3a 50%, #8b4513 100%);
+}
+
+#menu[data-current-theme="blush-latte"] {
+    background: linear-gradient(135deg, #c48a8a 0%, #d49999 50%, #e6b3b3 100%);
+}
+
+#menu[data-current-theme="blush-latte"] .text-white {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#menu[data-current-theme="blush-latte"] .bg-white {
+    background-color: #ffffff !important;
+}
+
+#menu[data-current-theme="blush-latte"] .border-white {
+    border-color: #ffffff !important;
+}
+
+#menu[data-current-theme="ice-brown-sugar"] {
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 30%, #DEB887 70%, #F4A460 100%);
+}
+
+#menu[data-current-theme="ice-brown-sugar"] .text-white {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#menu[data-current-theme="ice-brown-sugar"] .bg-white {
+    background-color: #ffffff !important;
+}
+
+#menu[data-current-theme="ice-brown-sugar"] .border-white {
+    border-color: #ffffff !important;
+}
+
+/* Swipe instruction text color adjustments */
+#menu[data-current-theme="blush-latte"] p,
+#menu[data-current-theme="ice-brown-sugar"] p {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Carousel cursor styling */
+.menu-carousel {
+    cursor: grab;
+    user-select: none;
+}
+
+.menu-carousel:active {
+    cursor: grabbing;
+}
+
+/* Default theme (Yesua) */
+#menu {
+    background: linear-gradient(135deg, #4a2c2a 0%, #6b3e3a 50%, #8b4513 100%);
+    transition: background 0.8s ease-in-out;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation Dots */
+.nav-dot {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.nav-dot:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* Theme-specific navigation dots */
+#menu[data-current-theme="blush-latte"] .nav-dot {
+    background-color: #ffffff !important;
+}
+
+#menu[data-current-theme="ice-brown-sugar"] .nav-dot {
+    background-color: #ffffff !important;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* Theme-specific carousel buttons */
+#menu[data-current-theme="blush-latte"] .carousel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+#menu[data-current-theme="blush-latte"] .carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+#menu[data-current-theme="ice-brown-sugar"] .carousel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+#menu[data-current-theme="ice-brown-sugar"] .carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive adjustments for carousel */
+@media (max-width: 1024px) {
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-btn i {
+        font-size: 1.2rem;
+    }
+    
+    .menu-carousel {
+        min-height: 60vh;
+    }
+    
+    .menu-slide .grid {
+        min-height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-btn {
+        display: none;
+    }
+    
+    #menu {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+    
+    .menu-carousel {
+        min-height: auto;
+    }
+    
+    .menu-slide .grid {
+        min-height: auto;
+        gap: 2rem;
+    }
+    
+    .menu-slide img {
+        width: 300px;
+        max-width: 90vw;
+    }
+}
+
+/* Smooth transitions for theme changes */
+#menu * {
+    transition: color 0.3s ease;
 }
