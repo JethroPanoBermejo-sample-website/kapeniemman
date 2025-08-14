@@ -68,269 +68,29 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Add active class to clicked button and corresponding category
             button.classList.add('active');
-            document.getElementById(targetCategory).classList.add('active');
-        });
-    });
-    
-    // Carousel functionality for each menu category
-    const carousels = document.querySelectorAll('.menu-carousel');
-    
-    carousels.forEach(carousel => {
-        const track = carousel.querySelector('.menu-carousel-track');
-        const prevBtn = carousel.querySelector('.prev-btn');
-        const nextBtn = carousel.querySelector('.next-btn');
-        const items = track.querySelectorAll('.menu-item');
-        
-        if (items.length === 0) return;
-        
-        let currentIndex = 0;
-        
-        function getVisibleItems() {
-            const screenWidth = window.innerWidth;
-            if (screenWidth >= 767) return 3; // Desktop and tablets above 766px - 3 items
-            if (screenWidth >= 700) return 2; // 700px-766px - 2 items  
-            return 1; // 699px and below - 1 item
-        }
-        
-        function getItemWidth() {
-            const screenWidth = window.innerWidth;
-            if (screenWidth >= 1200) return 340; // 320px width + 20px gap
-            if (screenWidth >= 900) return 330; // 310px width + 20px gap
-            if (screenWidth >= 767) return 320; // 300px width + 20px gap
-            if (screenWidth >= 700) return 340; // For 2 items - 320px width + 20px gap
-            if (screenWidth >= 480) return 320; // 300px width + 20px gap
-            if (screenWidth >= 360) return 300; // 280px width + 20px gap
-            return 280; // 260px width + 20px gap for very small screens
-        }
-        
-        function shouldShowCarousel() {
-            const visibleItems = getVisibleItems();
-            return items.length > visibleItems;
-        }
-        
-        function updateCarousel() {
-            const visibleItems = getVisibleItems();
-            const itemWidth = getItemWidth();
-            const maxIndex = Math.max(0, items.length - visibleItems);
-            
-            // Check if we need carousel functionality
-            if (!shouldShowCarousel()) {
-                // Center the items and hide buttons
-                track.style.transform = 'translateX(0)';
-                track.classList.add('centered');
-                prevBtn.style.display = 'none';
-                nextBtn.style.display = 'none';
-                currentIndex = 0;
-                return;
-            }
-            
-            // Show carousel controls
-            track.classList.remove('centered');
-            prevBtn.style.display = 'flex';
-            nextBtn.style.display = 'flex';
-            
-            // Adjust currentIndex if it's beyond the new max
-            if (currentIndex > maxIndex) {
-                currentIndex = maxIndex;
-            }
-            
-            const translateX = currentIndex * itemWidth;
-            track.style.transform = `translateX(-${translateX}px)`;
-            
-            // Update button states
-            prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-            nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
-            prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
-            nextBtn.style.pointerEvents = currentIndex >= maxIndex ? 'none' : 'auto';
-        }
-        
-        prevBtn.addEventListener('click', () => {
-            const visibleItems = getVisibleItems();
-            const maxIndex = Math.max(0, items.length - visibleItems);
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
+            const targetCategoryElement = document.querySelector(`.menu-category[data-category="${targetCategory}"]`);
+            if (targetCategoryElement) {
+                targetCategoryElement.classList.add('active');
             }
         });
-        
-        nextBtn.addEventListener('click', () => {
-            const visibleItems = getVisibleItems();
-            const maxIndex = Math.max(0, items.length - visibleItems);
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
-        
-        // Initialize carousel
-        updateCarousel();
-        
-        // Handle window resize
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                updateCarousel();
-            }, 100);
-        });
-        
-        // Touch/swipe support for mobile
-        let startX = 0;
-        let isDragging = false;
-        let startTransform = 0;
-        
-        track.addEventListener('touchstart', (e) => {
-            if (!shouldShowCarousel()) return;
-            startX = e.touches[0].clientX;
-            isDragging = true;
-            const transform = track.style.transform;
-            startTransform = transform ? parseInt(transform.match(/-?\d+/)?.[0] || 0) : 0;
-        });
-        
-        track.addEventListener('touchmove', (e) => {
-            if (!isDragging || !shouldShowCarousel()) return;
-            e.preventDefault();
-            
-            const currentX = e.touches[0].clientX;
-            const diffX = startX - currentX;
-            const newTransform = startTransform + diffX;
-            
-            // Add some resistance at the boundaries
-            const visibleItems = getVisibleItems();
-            const itemWidth = getItemWidth();
-            const maxTransform = (items.length - visibleItems) * itemWidth;
-            
-            if (newTransform < 0) {
-                track.style.transform = `translateX(${Math.max(newTransform * 0.3, -itemWidth * 0.5)}px)`;
-            } else if (newTransform > maxTransform) {
-                track.style.transform = `translateX(-${Math.min(maxTransform + (newTransform - maxTransform) * 0.3, maxTransform + itemWidth * 0.5)}px)`;
-            } else {
-                track.style.transform = `translateX(-${newTransform}px)`;
-            }
-        });
-        
-        track.addEventListener('touchend', (e) => {
-            if (!isDragging || !shouldShowCarousel()) return;
-            isDragging = false;
-            
-            const endX = e.changedTouches[0].clientX;
-            const diffX = startX - endX;
-            const itemWidth = getItemWidth();
-            const visibleItems = getVisibleItems();
-            const maxIndex = Math.max(0, items.length - visibleItems);
-            
-            if (Math.abs(diffX) > 50) { // Minimum swipe distance
-                if (diffX > 0 && currentIndex < maxIndex) {
-                    currentIndex++;
-                } else if (diffX < 0 && currentIndex > 0) {
-                    currentIndex--;
-                }
-            }
-            updateCarousel();
-        });
-        
-        // Mouse drag support for desktop
-        let mouseStartX = 0;
-        let isMouseDragging = false;
-        let mouseStartTransform = 0;
-        
-        track.addEventListener('mousedown', (e) => {
-            if (!shouldShowCarousel()) return;
-            mouseStartX = e.clientX;
-            isMouseDragging = true;
-            track.style.cursor = 'grabbing';
-            const transform = track.style.transform;
-            mouseStartTransform = transform ? parseInt(transform.match(/-?\d+/)?.[0] || 0) : 0;
-        });
-        
-        track.addEventListener('mousemove', (e) => {
-            if (!isMouseDragging || !shouldShowCarousel()) return;
-            e.preventDefault();
-            
-            const currentX = e.clientX;
-            const diffX = mouseStartX - currentX;
-            const newTransform = mouseStartTransform + diffX;
-            
-            // Add resistance at boundaries
-            const visibleItems = getVisibleItems();
-            const itemWidth = getItemWidth();
-            const maxTransform = (items.length - visibleItems) * itemWidth;
-            
-            if (newTransform < 0) {
-                track.style.transform = `translateX(${Math.max(newTransform * 0.3, -itemWidth * 0.5)}px)`;
-            } else if (newTransform > maxTransform) {
-                track.style.transform = `translateX(-${Math.min(maxTransform + (newTransform - maxTransform) * 0.3, maxTransform + itemWidth * 0.5)}px)`;
-            } else {
-                track.style.transform = `translateX(-${newTransform}px)`;
-            }
-        });
-        
-        track.addEventListener('mouseup', (e) => {
-            if (!isMouseDragging || !shouldShowCarousel()) return;
-            isMouseDragging = false;
-            track.style.cursor = 'grab';
-            
-            const mouseEndX = e.clientX;
-            const diffX = mouseStartX - mouseEndX;
-            const itemWidth = getItemWidth();
-            const visibleItems = getVisibleItems();
-            const maxIndex = Math.max(0, items.length - visibleItems);
-            
-            if (Math.abs(diffX) > 50) {
-                if (diffX > 0 && currentIndex < maxIndex) {
-                    currentIndex++;
-                } else if (diffX < 0 && currentIndex > 0) {
-                    currentIndex--;
-                }
-            }
-            updateCarousel();
-        });
-        
-        track.addEventListener('mouseleave', () => {
-            if (isMouseDragging) {
-                isMouseDragging = false;
-                track.style.cursor = 'grab';
-                updateCarousel();
-            }
-        });
-        
-        // Set initial cursor
-        track.style.cursor = 'grab';
     });
 });
 
-// Back to Top Button functionality
-if (backToTopButton) {
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+// Animations on scroll
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.fade-in');
+    elements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }
     });
 }
 
-// Animation on scroll
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.slide-up, .fade-in');
-    
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
-        
-        if (elementPosition < screenPosition) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }
-    });
-};
-
-// Set initial state for animated elements
-document.querySelectorAll('.slide-up').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.8s ease-out';
-});
-
+// Initialize fade-in elements
 document.querySelectorAll('.fade-in').forEach(el => {
     el.style.opacity = '0';
     el.style.transition = 'all 1s ease-in';
@@ -388,6 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeGalleryModal = document.getElementById('close-gallery-modal');
     const prevImageBtn = document.getElementById('prev-image');
     const nextImageBtn = document.getElementById('next-image');
+    
+    if (!galleryItems.length || !galleryModal) return;
     
     let currentImageIndex = 0;
     let galleryImages = [];
