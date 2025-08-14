@@ -83,7 +83,7 @@
         <!-- Background Video -->
         <video autoplay muted loop class="hero-video">
             <source src="img/kapeniemman-backgroundvideo.mp4" type="video/mp4">
-            <source src="img/kapeniemman-backgroundvideo.webm" type="video/webm">
+            <source src="img/kapeniemman-backgroundvideo.webp" type="video/webm">
             <!-- Fallback for browsers that don't support video -->
             Your browser does not support the video tag.
         </video>
@@ -156,234 +156,102 @@
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="py-16 bg-[#dfb79c]">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-[#5d1929]">Our Menu Categories</h2>
-                <div class="w-24 h-1 bg-[#5c2c22] mx-auto"></div>
-                <p class="mt-4 max-w-2xl mx-auto">Discover our diverse selection of coffee, food, and specialty drinks</p>
+    <section id="menu" class="py-12 relative overflow-hidden">
+        <div class="container mx-auto px-4 w-full">
+            <div class="text-center mb-8">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-white">Weekend Special Menu</h2>
+                <div class="w-24 h-1 bg-white mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto text-white opacity-90">Our signature drinks crafted with faith and love</p>
             </div>
             
-            <!-- Menu Categories Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Swipe Instructions -->
+            <div class="text-center mb-8">
+                <p class="text-white opacity-75 text-sm">← Swipe left or right to explore our drinks →</p>
+            </div>
+            
+            <!-- Menu Carousel -->
+            <div class="menu-carousel relative max-w-6xl mx-auto">
+                <!-- Yesua -->
+                <div class="menu-slide active" data-theme="yesua">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[50vh]">
+                        <!-- Content Left -->
+                        <div class="text-white order-2 lg:order-1 px-4 lg:px-8 flex flex-col justify-center">
+                            <h3 class="title-font text-3xl md:text-4xl font-bold mb-6">Yesua</h3>
+                            <p class="text-lg md:text-xl font-medium mb-6 italic">"A Cup of Faith, A Story of Grace."</p>
+                            
+                            <div class="space-y-4 text-base md:text-lg leading-relaxed">
+                                <p>A year ago, this drink was crafted as a dedication to the One who carried us through every challenge and every season — Jesus, our Yesua. ✨</p>
+                                <p>With every sip, we remember His faithfulness and the grace that flows</p> 
+                            </div>
+                        </div>
+                        
+                        <!-- Image Right -->
+                        <div class="order-1 lg:order-2 flex justify-center lg:justify-end items-center">
+                            <div class="relative">
+                                <img src="img/yesua.webp" alt="Yesua Coffee" class="w-72 md:w-80 lg:w-[380px] xl:w-[420px] h-auto object-cover rounded-2xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                <!-- Toasties Category -->
-                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="bg-[#5c2c22] text-white p-4 text-center">
-                        <h3 class="title-font text-xl font-semibold">Toasties</h3>
-                    </div>
-                    <div class="p-4">
-                        <!-- Cheese Toasties -->
-                        <div class="menu-item-small mb-4 flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE20230724110334060845/detail/menueditor_item_a7777a52d6b140bfb70d8fdd703b4c1a_1721970137317864881.webp" 
-                                 alt="Cheese Toasties" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Cheese Toasties</h4>
-                                <span class="text-[#5c2c22] font-bold">₱150</span>
+                <!-- Blush Latte -->
+                <div class="menu-slide" data-theme="blush-latte">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[50vh]">
+                        <!-- Image Left -->
+                        <div class="order-1 flex justify-center lg:justify-start items-center">
+                            <div class="relative">
+                                <img src="img/blush-latte.webp" alt="Blush Latte" class="w-72 md:w-80 lg:w-[380px] xl:w-[420px] h-auto object-cover rounded-2xl">
                             </div>
                         </div>
-                        <!-- Creamy Spinach -->
-                        <div class="menu-item-small flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE20230724110334031552/detail/menueditor_item_db4f1b5cbf284604bf9e29f88e2bc2e0_1727429816483125191.webp" 
-                                 alt="Creamy Spinach" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Creamy Spinach</h4>
-                                <span class="text-[#5c2c22] font-bold">₱195</span>
+                        
+                        <!-- Content Right -->
+                        <div class="text-white order-2 px-4 lg:px-8 flex flex-col justify-center">
+                            <h3 class="title-font text-3xl md:text-4xl font-bold mb-6">Blush Latte</h3>
+                            
+                            <div class="space-y-6 text-base md:text-lg leading-relaxed">
+                                <p class="text-lg md:text-xl">Let this Blush Latte be your little highlight — crafted to make you smile and remind you that God's mercies are new every morning. ☀️</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Hotdogs Category -->
-                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="bg-[#5c2c22] text-white p-4 text-center">
-                        <h3 class="title-font text-xl font-semibold">Hotdogs (Cheese Stuffed)</h3>
-                    </div>
-                    <div class="p-4">
-                        <!-- Bacon Wrapped Hotdog -->
-                        <div class="menu-item-small mb-4 flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2023082900341497244/detail/menueditor_item_757702aaa935405ea7846b1cb0d58a24_1706337520048998253.webp" 
-                                 alt="Bacon Wrapped Hotdog" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Bacon Wrapped Hotdog</h4>
-                                <span class="text-[#5c2c22] font-bold">₱165</span>
+                
+                <!-- Ice Brown Sugar Latte -->
+                <div class="menu-slide" data-theme="ice-brown-sugar">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[50vh]">
+                        <!-- Content Left -->
+                        <div class="text-white order-2 lg:order-1 px-4 lg:px-8 flex flex-col justify-center">
+                            <h3 class="title-font text-3xl md:text-4xl font-bold mb-6">Ice Brown Sugar Latte</h3>
+                            
+                            <div class="space-y-4 text-base md:text-lg leading-relaxed">
+                                <p class="text-lg md:text-xl">Step into the new week with quiet strength. 🌿</p>
+                                <p>You don't have to have it all figured out — God goes before you, and His grace meets you where you are.</p>
                             </div>
                         </div>
-                        <!-- Chili Con Hotdog -->
-                        <div class="menu-item-small flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2023112902103092928/detail/menueditor_item_5804082ca7294527800fe891584f14b8_1702021880541957893.webp" 
-                                 alt="Chili Con Hotdog" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Chili Con Hotdog</h4>
-                                <span class="text-[#5c2c22] font-bold">₱185</span>
+                        
+                        <!-- Image Right -->
+                        <div class="order-1 lg:order-2 flex justify-center lg:justify-end items-center">
+                            <div class="relative">
+                                <img src="img/ice-brown-sugar-latte.webp" alt="Ice Brown Sugar Latte" class="w-72 md:w-80 lg:w-[380px] xl:w-[420px] h-auto object-cover rounded-2xl">
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Homemade Waffles Category -->
-                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="bg-[#5c2c22] text-white p-4 text-center">
-                        <h3 class="title-font text-xl font-semibold">Homemade Waffles</h3>
-                    </div>
-                    <div class="p-4">
-                        <!-- Classic Stack -->
-                        <div class="menu-item-small mb-4 flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2024022205242279090/detail/menueditor_item_b8be98ae6ae549e49844936c99215a6b_1708579356031176957.webp" 
-                                 alt="Classic Stack" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Classic Stack</h4>
-                                <span class="text-[#5c2c22] font-bold">₱170</span>
-                            </div>
-                        </div>
-                        <!-- Cinnamon Crisp -->
-                        <div class="menu-item-small flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2024082107500765886/detail/menueditor_item_9e5d95f4d95d4e63b122b8ed11fb34bb_1724226598951312040.webp" 
-                                 alt="Cinnamon Crisp" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Cinnamon Crisp</h4>
-                                <span class="text-[#5c2c22] font-bold">₱210</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Native Coffee Category -->
-                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="bg-[#5c2c22] text-white p-4 text-center">
-                        <h3 class="title-font text-xl font-semibold">Native Coffee</h3>
-                    </div>
-                    <div class="p-4">
-                        <!-- Kape ni Emman Black -->
-                        <div class="menu-item-small mb-4 flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE20230724110337043124/detail/menueditor_item_f9b29bbe72ef424cba7e233476e61e4a_1747374387039593902.webp" 
-                                 alt="Kape ni Emman Black Coffee" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Kape ni Emman (Black)</h4>
-                                <span class="text-[#5c2c22] font-bold">₱85</span>
-                            </div>
-                        </div>
-                        <!-- Kape ni Emman with Milk -->
-                        <div class="menu-item-small flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2024111103435454976/detail/menueditor_item_dfa8e9c13cb848a8b590fb9f28a21d29_1731307761061413801.webp" 
-                                 alt="Kape ni Emman with Milk" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Kape ni Emman with Milk</h4>
-                                <span class="text-[#5c2c22] font-bold">₱110</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Specialty Coffee Category -->
-                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="bg-[#5c2c22] text-white p-4 text-center">
-                        <h3 class="title-font text-xl font-semibold">Specialty Coffee</h3>
-                    </div>
-                    <div class="p-4">
-                        <!-- Kape Yesu -->
-                        <div class="menu-item-small mb-4 flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2024020505592296761/detail/menueditor_item_59e2b9976767433abb2f74c1b25306a1_1717479884235377619.webp" 
-                                 alt="Kape Yesu" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Kape Yesu</h4>
-                                <span class="text-[#5c2c22] font-bold">₱180</span>
-                            </div>
-                        </div>
-                        <!-- Café Latte -->
-                        <div class="menu-item-small flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE2024050903170861548/detail/menueditor_item_d06077c8535e40c598f5aa786f0cdc8e_1716728945963448780.webp" 
-                                 alt="Café Latte" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Café Latte</h4>
-                                <span class="text-[#5c2c22] font-bold">₱195</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Matcha Series Category -->
-                <div class="menu-category bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="bg-[#5c2c22] text-white p-4 text-center">
-                        <h3 class="title-font text-xl font-semibold">Matcha Series</h3>
-                    </div>
-                    <div class="p-4">
-                        <!-- Hot Matcha -->
-                        <div class="menu-item-small mb-4 flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE20230724110335084808/detail/menueditor_item_9aff45ff6913422583662aa1ffa058b5_1721974867253918930.webp" 
-                                 alt="Hot Matcha" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Hot Matcha</h4>
-                                <span class="text-[#5c2c22] font-bold">₱140</span>
-                            </div>
-                        </div>
-                        <!-- Iced Matcha -->
-                        <div class="menu-item-small flex items-center space-x-3">
-                            <img src="https://food-cms.grab.com/compressed_webp/items/PHITE20230724110335077500/detail/menueditor_item_87f1a6f52fce48a2a8acefad66722c51_1721970843830320999.webp" 
-                                 alt="Iced Matcha" 
-                                 class="w-16 h-16 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-[#5d1929]">Iced Matcha</h4>
-                                <span class="text-[#5c2c22] font-bold">₱170</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
             
-            <div class="text-center">
-                <button id="view-full-menu-btn" class="inline-block border-2 border-[#5d1929] text-[#5d1929] hover:bg-[#5d1929] hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">
+            <!-- Navigation Dots -->
+            <div class="flex justify-center space-x-3 mt-6">
+                <button class="nav-dot active w-3 h-3 rounded-full bg-white opacity-100 transition-opacity duration-300" data-slide="0"></button>
+                <button class="nav-dot w-3 h-3 rounded-full bg-white opacity-50 transition-opacity duration-300" data-slide="1"></button>
+                <button class="nav-dot w-3 h-3 rounded-full bg-white opacity-50 transition-opacity duration-300" data-slide="2"></button>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="full-menu.html" class="inline-block border-2 border-white text-white hover:bg-white hover:text-black font-bold py-3 px-8 rounded-full transition duration-300">
                     View Full Menu
-                </button>
+                </a>
             </div>
         </div>
     </section>
-
-    <!-- Full Menu Modal -->
-    <div id="full-menu-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-white rounded-lg max-w-md w-full mx-auto">
-                <div class="p-6 text-center">
-                    <h3 class="title-font text-2xl font-bold mb-4 text-[#5d1929]">Order Our Full Menu</h3>
-                    <p class="mb-6 text-gray-600">Choose your preferred delivery platform to browse our complete menu and place your order.</p>
-                    
-                    <div class="space-y-4">
-                        <!-- Grab Food Link -->
-                        <a href="https://food.grab.com/ph/en/restaurant/online-delivery/2-C4JBTJCEGLCBA2?sourceID=20250726_214232_2d06e19e5366439e96d6f178656807ac_MEXMPS" 
-                           target="_blank" 
-                           class="flex items-center justify-center space-x-3 bg-[#00B14F] hover:bg-[#009A42] text-white font-bold py-4 px-6 rounded-lg transition duration-300">
-                            <img src="img/kapeniemman-grab-logo.png" alt="Grab" class="h-8 w-8 rounded-full">
-                            <span>Order via Grab Food</span>
-                        </a>
-                        
-                        <!-- FoodPanda Link -->
-                        <a href="https://www.foodpanda.ph/restaurant/ugei/kape-ni-emman-jaro" 
-                           target="_blank" 
-                           class="flex items-center justify-center space-x-3 bg-[#E21B70] hover:bg-[#C91860] text-white font-bold py-4 px-6 rounded-lg transition duration-300">
-                            <img src="img/kapeniemman-foodpanda-logo.png" alt="FoodPanda" class="h-8 w-8 rounded-full">
-                            <span>Order via FoodPanda</span>
-                        </a>
-                    </div>
-                    
-                    <button id="close-modal-btn" class="mt-6 text-gray-500 hover:text-gray-700 font-medium">
-                        Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Gallery Section -->
     <section id="gallery" class="py-12 md:py-16 bg-[#dbb88e]">
@@ -610,45 +478,18 @@
             
             <!-- Location Details -->
             <div class="max-w-4xl mx-auto text-center">
-                <!-- Desktop/Tablet Layout (700px and above) - Two Columns -->
-                <div class="hidden min-[700px]:grid min-[700px]:grid-cols-2 min-[700px]:gap-8 min-[700px]:items-start">
-                    <!-- Left Column -->
-                    <div>
-                        <!-- Address -->
-                        <div class="mb-6">
-                            <h3 class="title-font text-xl font-semibold mb-2 text-[#5c2c22]">Address</h3>
-                            <p class="text-[#5d1929] text-base">20 Sto. Domingo St, Jaro, Iloilo City, Iloilo</p>
-                        </div>
-                        
-                        <!-- Business Hours -->
-                        <div class="mb-6">
-                            <h3 class="title-font text-xl font-semibold mb-2 text-[#5c2c22]">Business Hours</h3>
-                            <p class="text-[#5d1929] text-base">10:00 AM - 7:00 PM<br>Monday to Saturday</p>
-                        </div>
+                <!-- Desktop/Tablet Layout (700px and above) - Centered Single Column -->
+                <div class="hidden min-[700px]:block">
+                    <!-- Address -->
+                    <div class="mb-6">
+                        <h3 class="title-font text-xl font-semibold mb-2 text-[#5c2c22]">Address</h3>
+                        <p class="text-[#5d1929] text-base">20 Sto. Domingo St, Jaro, Iloilo City, Iloilo</p>
                     </div>
                     
-                    <!-- Right Column -->
-                    <div>
-                        <!-- Contact -->
-                        <div class="mb-8">
-                            <h3 class="title-font text-xl font-semibold mb-4 text-[#5c2c22]">Contact</h3>
-                            
-                            <!-- All Icons in One Line -->
-                            <div class="flex justify-center space-x-4">
-                                <a href="https://web.facebook.com/kapeniemman" target="_blank" class="bg-[#3b5998] text-white p-3 rounded-full hover:bg-[#344e86] transition duration-300">
-                                    <i class="fab fa-facebook-f text-lg"></i>
-                                </a>
-                                <a href="https://www.instagram.com/kapeniemman" target="_blank" class="bg-[#e4405f] text-white p-3 rounded-full hover:bg-[#d03150] transition duration-300">
-                                    <i class="fab fa-instagram text-lg"></i>
-                                </a>
-                                <a href="https://food.grab.com/ph/en/restaurant/online-delivery/2-C4JBTJCEGLCBA2?sourceID=20250726_214232_2d06e19e5366439e96d6f178656807ac_MEXMPS" target="_blank" class="bg-[#00B14F] text-white p-3 rounded-full hover:bg-[#009A42] transition duration-300">
-                                    <img src="img/kapeniemman-grab-logo.png" alt="Grab" class="h-6 w-6 rounded-full">
-                                </a>
-                                <a href="https://www.foodpanda.ph/restaurant/ugei/kape-ni-emman-jaro" target="_blank" class="bg-[#E21B70] text-white p-3 rounded-full hover:bg-[#C91860] transition duration-300">
-                                    <img src="img/kapeniemman-foodpanda-logo.png" alt="FoodPanda" class="h-6 w-6 rounded-full">
-                                </a>
-                            </div>
-                        </div>
+                    <!-- Business Hours -->
+                    <div class="mb-6">
+                        <h3 class="title-font text-xl font-semibold mb-2 text-[#5c2c22]">Business Hours</h3>
+                        <p class="text-[#5d1929] text-base">10:00 AM - 7:00 PM<br>Monday to Saturday</p>
                     </div>
                 </div>
 
@@ -665,27 +506,6 @@
                         <h3 class="title-font text-xl font-semibold mb-2 text-[#5c2c22]">Business Hours</h3>
                         <p class="text-[#5d1929] text-base">10:00 AM - 7:00 PM<br>Monday to Saturday</p>
                     </div>
-                    
-                    <!-- Contact -->
-                    <div class="mb-8">
-                        <h3 class="title-font text-xl font-semibold mb-4 text-[#5c2c22]">Contact</h3>
-                        
-                        <!-- All Icons in One Line -->
-                        <div class="flex justify-center space-x-4">
-                            <a href="https://web.facebook.com/kapeniemman" target="_blank" class="bg-[#3b5998] text-white p-3 rounded-full hover:bg-[#344e86] transition duration-300">
-                                <i class="fab fa-facebook-f text-lg"></i>
-                            </a>
-                            <a href="https://www.instagram.com/kapeniemman" target="_blank" class="bg-[#e4405f] text-white p-3 rounded-full hover:bg-[#d03150] transition duration-300">
-                                <i class="fab fa-instagram text-lg"></i>
-                            </a>
-                            <a href="https://food.grab.com/ph/en/restaurant/online-delivery/2-C4JBTJCEGLCBA2?sourceID=20250726_214232_2d06e19e5366439e96d6f178656807ac_MEXMPS" target="_blank" class="bg-[#00B14F] text-white p-3 rounded-full hover:bg-[#009A42] transition duration-300">
-                                <img src="img/kapeniemman-grab-logo.png" alt="Grab" class="h-6 w-6 rounded-full">
-                            </a>
-                            <a href="https://www.foodpanda.ph/restaurant/ugei/kape-ni-emman-jaro" target="_blank" class="bg-[#E21B70] text-white p-3 rounded-full hover:bg-[#C91860] transition duration-300">
-                                <img src="img/kapeniemman-foodpanda-logo.png" alt="FoodPanda" class="h-6 w-6 rounded-full">
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -697,7 +517,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="md:col-span-1">
                     <a href="#" class="flex items-center mb-4">
-                        <img src="img/kapeniemman-doglogo.png" alt="Kape ni Emman Dog Logo" class="h-20 lg:h-24 w-auto mr-3">
+                        <img src="img/kapeniemman-tablogo.jpg" alt="Kape ni Emman Tab Logo" class="h-20 lg:h-24 w-auto mr-3 rounded-full">
                         <span class="title-font text-2xl font-bold">Kape ni Emman</span>
                     </a>
                     <p class="mb-4">Traditionally Brewed Native Coffee & Specialty Coffee in the heart of Jaro, Iloilo City.</p>
@@ -739,6 +559,9 @@
                                 </a>
                                 <a href="https://www.instagram.com/kapeniemman" target="_blank" class="text-xl hover:text-[#dbb88e] transition duration-300">
                                     <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.tiktok.com/@kapeniemman" target="_blank" class="text-xl hover:text-[#dbb88e] transition duration-300">
+                                    <i class="fab fa-tiktok"></i>
                                 </a>
                             </div>
                         </div>
