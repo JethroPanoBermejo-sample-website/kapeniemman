@@ -340,39 +340,42 @@ document.querySelectorAll('.fade-in').forEach(el => {
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
-// Full Menu Modal functionality
+// Order Modal functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const viewFullMenuBtn = document.getElementById('view-full-menu-btn');
-    const fullMenuModal = document.getElementById('full-menu-modal');
-    const closeModalBtn = document.getElementById('close-modal-btn');
+    const orderNowBtn = document.getElementById('order-now-btn');
+    const orderModal = document.getElementById('order-modal');
+    const closeOrderModalBtn = document.getElementById('close-order-modal-btn');
 
-    // Open modal
-    viewFullMenuBtn.addEventListener('click', function() {
-        fullMenuModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    });
+    // Check if elements exist (for pages that don't have this modal)
+    if (orderNowBtn && orderModal && closeOrderModalBtn) {
+        // Open modal
+        orderNowBtn.addEventListener('click', function() {
+            orderModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
 
-    // Close modal when clicking close button
-    closeModalBtn.addEventListener('click', function() {
-        fullMenuModal.classList.add('hidden');
-        document.body.style.overflow = 'auto'; // Restore scrolling
-    });
-
-    // Close modal when clicking outside the modal content
-    fullMenuModal.addEventListener('click', function(e) {
-        if (e.target === fullMenuModal) {
-            fullMenuModal.classList.add('hidden');
+        // Close modal when clicking close button
+        closeOrderModalBtn.addEventListener('click', function() {
+            orderModal.classList.add('hidden');
             document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-    });
+        });
 
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !fullMenuModal.classList.contains('hidden')) {
-            fullMenuModal.classList.add('hidden');
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-    });
+        // Close modal when clicking outside the modal content
+        orderModal.addEventListener('click', function(e) {
+            if (e.target === orderModal) {
+                orderModal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !orderModal.classList.contains('hidden')) {
+                orderModal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        });
+    }
 });
 
 // Gallery Modal functionality
@@ -499,4 +502,165 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+});
+
+// Menu Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuSection = document.getElementById('menu');
+    const slides = document.querySelectorAll('.menu-slide');
+    const navDots = document.querySelectorAll('.nav-dot');
+    
+    let currentSlide = 0;
+    
+    // Theme configurations
+    const themes = {
+        'yesua': {
+            background: 'linear-gradient(135deg, #4a2c2a 0%, #6b3e3a 50%, #8b4513 100%)'
+        },
+        'blush-latte': {
+            background: 'linear-gradient(135deg, #d4a5a5 0%, #e8b5b5 50%, #f0c5c5 100%)'
+        },
+        'ice-brown-sugar': {
+            background: 'linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%)'
+        }
+    };
+    
+    // Function to show specific slide
+    function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        
+        // Update nav dots
+        navDots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        // Show current slide
+        slides[index].classList.add('active');
+        navDots[index].classList.add('active');
+        
+        // Update background theme
+        const currentTheme = slides[index].getAttribute('data-theme');
+        menuSection.setAttribute('data-current-theme', currentTheme);
+        
+        if (themes[currentTheme]) {
+            menuSection.style.background = themes[currentTheme].background;
+        }
+        
+        currentSlide = index;
+    }
+    
+    // Function to go to next slide
+    function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+    }
+    
+    // Function to go to previous slide
+    function prevSlide() {
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev);
+    }
+    
+    // Event listeners for navigation dots
+    navDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+        });
+    });
+    
+    // Touch/swipe support for mobile and desktop
+    let startX = 0;
+    let startY = 0;
+    let endX = 0;
+    let endY = 0;
+    
+    const carousel = document.querySelector('.menu-carousel');
+    
+    if (carousel) {
+        // Touch events for mobile
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+        
+        carousel.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            endY = e.changedTouches[0].clientY;
+            
+            const deltaX = startX - endX;
+            const deltaY = startY - endY;
+            
+            // Check if horizontal swipe is more significant than vertical
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                if (deltaX > 0) {
+                    // Swiped left - next slide
+                    nextSlide();
+                } else {
+                    // Swiped right - previous slide
+                    prevSlide();
+                }
+            }
+        });
+        
+        // Mouse events for desktop swipe simulation
+        let isMouseDown = false;
+        
+        carousel.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            carousel.style.cursor = 'grabbing';
+        });
+        
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isMouseDown) return;
+            e.preventDefault();
+        });
+        
+        carousel.addEventListener('mouseup', (e) => {
+            if (!isMouseDown) return;
+            isMouseDown = false;
+            carousel.style.cursor = 'grab';
+            
+            endX = e.clientX;
+            endY = e.clientY;
+            
+            const deltaX = startX - endX;
+            const deltaY = startY - endY;
+            
+            // Check if horizontal swipe is more significant than vertical
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 30) {
+                if (deltaX > 0) {
+                    // Swiped left - next slide
+                    nextSlide();
+                } else {
+                    // Swiped right - previous slide
+                    prevSlide();
+                }
+            }
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            isMouseDown = false;
+            carousel.style.cursor = 'grab';
+        });
+        
+        // Set initial cursor
+        carousel.style.cursor = 'grab';
+    }
+    
+    // Initialize carousel
+    showSlide(0);
+    
+    // Keyboard navigation (optional)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    });
 });
